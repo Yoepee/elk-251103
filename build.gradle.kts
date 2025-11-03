@@ -23,10 +23,13 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-elasticsearch")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.projectlombok:lombok")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	"developmentOnly"("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("org.springframework.boot:spring-boot-docker-compose")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	implementation("com.github.f4b6a3:tsid-creator:5.2.6")
 }
 
 tasks.withType<Test> {
