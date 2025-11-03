@@ -22,6 +22,18 @@ services:
       - elasticsearch
     networks:
       - elastic
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.3.3
+    container_name: logstash
+    environment:
+      - LS_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "5001:5001"
+      - "5044:5044"
+    depends_on:
+      - elasticsearch
+    networks:
+      - elastic
 networks:
   elastic:
     driver: bridge

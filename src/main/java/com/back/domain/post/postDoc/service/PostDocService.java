@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class PostDocService {
@@ -21,5 +23,13 @@ public class PostDocService {
 
     public void truncate() {
         postDocRepository.deleteAll();
+    }
+
+    public List<PostDoc> findByTitle(String keyword) {
+        return postDocRepository.findByTitleContainingOrContentContaining(keyword, keyword);
+    }
+
+    public List<PostDoc> searchByKeyword(String keyword) {
+        return postDocRepository.searchByKeyword(keyword);
     }
 }
