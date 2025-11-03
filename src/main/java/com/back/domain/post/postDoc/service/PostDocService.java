@@ -18,4 +18,8 @@ public class PostDocService {
                 .build();
         return postDocRepository.save(postDoc);
     }
+
+    public void truncate() {
+        postDocRepository.deleteAll();
+    }
 }
