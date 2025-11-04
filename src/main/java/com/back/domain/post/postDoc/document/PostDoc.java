@@ -5,8 +5,12 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Mapping;
+import org.springframework.data.elasticsearch.annotations.Setting;
 
-@Document(indexName = "app1_posts")
+@Document(indexName = "app1_posts", createIndex = true)
+@Setting(settingPath = "/elasticsearch/settings.json")
+@Mapping(mappingPath = "/elasticsearch/mapping.json")
 @Getter
 @Setter
 @Builder

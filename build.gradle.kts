@@ -31,6 +31,7 @@ dependencies {
 	runtimeOnly("com.mysql:mysql-connector-j")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	implementation("com.github.f4b6a3:tsid-creator:5.2.6")
+	implementation("net.logstash.logback:logstash-logback-encoder:7.4")
 }
 
 tasks.withType<Test> {
